@@ -1,0 +1,39 @@
+Backend-Module-Project
+
+Oaks Pokedex:
+
+RESTful API of a pokedex where user can CRUD pokemon. User must be authenticated and authorised.
+
+Dependencies:
+Node
+Sequelize
+Express
+Express OIDC
+Auth0
+
+Puzzle Pieces:
+Pokémon Model
+name
+type
+rarity
+
+User Model
+username
+password
+name
+region
+
+Register Route:
+creates a new user, hashes the password in the db
+TBC
+
+Login Route:
+To login in the client giving them access to the pokemon
+
+Authentication Middleware:
+If the a non user attempt to access the API they should get 401
+
+Authourisation Middleware:
+If a user from a different region attempt to access certain pokemon they should get 403
+
+More Precise CRUD
