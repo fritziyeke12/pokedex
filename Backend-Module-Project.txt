@@ -18,9 +18,9 @@ type
 rarity
 
 User Model
-username
-password
+nickname
 name
+email
 region
 
 Register Route:
