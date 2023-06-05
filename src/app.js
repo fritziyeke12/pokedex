@@ -2,7 +2,8 @@ const { auth } = require("express-openid-connect");
 const express = require("express");
 const app = express();
 const { config } = require("../config/index.js");
-const { Pokemon } = require("../db/Pokemon.js");
+const { Pokemon, Op } = require("../db");
+// const {  } = require("sequelize");
 
 app.set("json spaces", "\t")
 app.use(express.json());
@@ -38,7 +39,7 @@ app.get("/pokedex/:name", async (req, res, next) => {
     const { name } = req.params;
 
     try {
-        let poke = await Pokemon.findOne({where: {name}});
+        let poke = await Pokemon.findOne({attributes: ["name", "type", "rarity", "region"], where: {name: {[Op.substring]: `${name}`}}});
         res.send(poke);
     } catch (error) {
         console.error(error);
