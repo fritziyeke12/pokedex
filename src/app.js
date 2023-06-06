@@ -11,16 +11,35 @@ app.use(express.urlencoded({extended: true}));
 
 // auth router attaches /login, /logout, and /callback routes to the baseURL
 app.use(auth(config));
-
+let user;
 //middleware
-
+app.use((req, res, next) => {
+    req.user = req.oidc.user;
+    user = req.oidc.user;
+    // const header = req.get("Authorization");
+  
+    // if(!header){
+    //   console.error("No Authorization header");
+    //   res.set("WWW-Authenticate", "Bearer");
+    //   res.sendStatus(401);//Unauthorised
+  
+    //   return;//nothing runs below this if there is no header
+    // }
+  
+    // const [type, token] = header.split(' ');
+  
+    // if(type.toLowerCase() !== "bearer" || !token){
+    //   console.error("Invalid Token");
+    //   res.sendStatus(401);
+      
+    //   return;//nothing runs below if the token is invalid
+    // }
+    next();
+  });
 
 // req.isAuthenticated is provided from the auth router
 app.get('/', async (req, res) => {
-    res.send(req.oidc.isAuthenticated() ? "Logged in" : 'Logged out');
-    // console.log(req.oidc.accessToken);
-    // console.log(req.oidc.user);
-    // console.log(req.oidc.user.email);
+    res.send(req.oidc.isAuthenticated() ? user : 'Logged out');
 });
 
 //gets all pokemon
@@ -93,8 +112,8 @@ app.delete("/pokemon/delete/:id", async (req, res, next) => {
         let pokemonToDelete = await Pokemon.findByPk(id);
         let copy = pokemonToDelete;
         await pokemonToDelete.destroy();
-        console.log("Deleted:");
-        console.log(copy);
+        // console.log("Deleted:");
+        // console.log(copy);
         res.sendStatus(204);
     } catch (error) {
         console.error(error);
