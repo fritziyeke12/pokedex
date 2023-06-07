@@ -1,60 +1,70 @@
 const pokémon = [
     {
-        name: "Palkia",
-        type: "Water, Dragon",
-        rarity: "Legendary",
-        region: "Sinnoh"
+        "name": "Palkia",
+        "type": "Water, Dragon",
+        "rarity": "Legendary",
+        "region": "Sinnoh"
     },
     {
-        name: "Lucario",
-        type: "Fighting, Steel",
-        rarity: "Rare",
-        region: "Sinnoh"
+        "name": "Lucario",
+        "type": "Fighting, Steel",
+        "rarity": "Rare",
+        "region": "Sinnoh"
     },
     {
-        name: "Sandile",
-        type: "Ground, Dark",
-        rarity: "Uncommon",
-        region: "Unova"
+        "name": "Sandile",
+        "type": "Ground, Dark",
+        "rarity": "Uncommon",
+        "region": "Unova"
     },
     {
-        name: "Charmander",
-        type: "Fire",
-        rarity: "Uncommon",
-        region: "Kanto"
+        "name": "Charmander",
+        "type": "Fire",
+        "rarity": "Uncommon",
+        "region": "Kanto"
     },
     {
-        name: "Wurmple",
-        type: "Bug",
-        rarity: "Dirt",
-        region: "Hoenn"
+        "name": "Mudkip",
+        "type": "Water",
+        "rarity": "Uncommon",
+        "region": "Hoenn"
+    },
+    {
+        "name": "Wurmple",
+        "type": "Bug",
+        "rarity": "Dirt",
+        "region": "Hoenn"
     },
 ];
 
 const users = [
     {
-        name: "Samuel Oak",
-        nickname: "oakisdagoat",
-        email: "oakisdagoat@gmail.com",
-        region: "Kanto"
+        "name": "Samuel Oak",
+        "username": "oakisdagoat",
+        "password": "testoak",
+        "email": "oakisdagoat@gmail.com",
+        "region": "Kanto"
     },
     {
-        name: "Prof Birch",
-        nickname: "birchtheprof",
-        email: "birchtheprof@gmail.com",
-        region: "Hoenn"
+        "name": "Prof Birch",
+        "username": "birchtheprof",
+        "password": "testbirch",
+        "email": "birchtheprof@gmail.com",
+        "region": "Hoenn"
     },
     {
-        name: "Aurea Juniper",
-        nickname: "juniperofunova",
-        email: "juniperofunova@gmail.com",
-        region: "Unova"
+        "name": "Aurea Juniper",
+        "username": "juniperofunova",
+        "password": "testjuniper",
+        "email": "juniperofunova@gmail.com",
+        "region": "Unova"
     },
     {
-        name: "Prof Rowan",
-        nickname: "sinnohdabest",
-        email: "sinnohdabest@gmail.com",
-        region: "Sinnoh"
+        "name": "Prof Rowan",
+        "username": "sinnohdabest",
+        "password": "testrowan",
+        "email": "sinnohdabest@gmail.com",
+        "region": "Sinnoh"
     },
 ];
 
